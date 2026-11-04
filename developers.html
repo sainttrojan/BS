@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>المطورين العقاريين ومشروعات البرايمري | Better Solutions</title>
+  <meta name="description" content="دليل كبرى شركات التطوير العقاري في مصر ومدينة العبور. تصفح أحدث المشروعات السكنية والتجارية مع أسعار وأنظمة سداد مباشرة من المطورين."/>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#735c00",
+            "primary-container": "#d4af37",
+            "on-primary-container": "#191c1d",
+            "on-primary-fixed": "#241a00",
+            "primary-fixed": "#ffe088",
+            "secondary": "#5f5e5e",
+            "surface": "#f8f9fa",
+            "surface-bright": "#f8f9fa",
+            "surface-container-low": "#f3f4f5",
+            "surface-container": "#edeeef",
+            "surface-container-high": "#e7e8e9",
+            "on-surface": "#191c1d",
+            "on-surface-variant": "#4d4635",
+            "pure-white": "#FFFFFF",
+            "border-gray": "#E5E7EB",
+            "badge-gold-bg": "#FFF8E7",
+            "badge-gold-text": "#996515",
+            "success-green": "#00C250",
+            "tertiary": "#32618f",
+            "inverse-surface": "#191c1d"
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "gutter": "24px",
+            "container-max": "1200px",
+            "margin-mobile": "16px",
+            "margin-desktop": "48px"
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased">
+
+    <!-- Top Navigation Header -->
+  <header class="glass-header sticky top-0 w-full z-50 border-b border-border-gray">
+    <div class="flex justify-between items-center w-full px-4 sm:px-8 xl:px-12 max-w-[1440px] mx-auto h-20">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-6 xl:gap-10">
+        <a href="index.html" class="font-extrabold text-2xl tracking-tight text-on-surface flex items-center gap-2.5 shrink-0">
+          <span class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-black text-xl shadow-sm">BS</span>
+          <span class="whitespace-nowrap">Better Solutions</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden lg:flex gap-5 xl:gap-8 items-center whitespace-nowrap">
+          <a class="text-secondary hover:text-primary text-sm font-semibold transition-colors whitespace-nowrap" href="index.html">الرئيسية</a>
+          <a class="text-secondary hover:text-primary text-sm font-semibold transition-colors whitespace-nowrap" href="latest-units.html">أحدث الوحدات</a>
+          <a class="text-secondary hover:text-primary text-sm font-semibold transition-colors whitespace-nowrap" href="resale-deals.html">لقطات ريسيل</a>
+          <a class="text-primary font-bold border-b-2 border-primary pb-1 text-sm transition-colors whitespace-nowrap" href="developers.html">المطورين</a>
+          <a class="text-secondary hover:text-primary text-sm font-semibold transition-colors whitespace-nowrap" href="sell-property.html">اعرض عقارك</a>
+          <a class="text-secondary hover:text-primary text-sm font-semibold transition-colors whitespace-nowrap" href="contact.html">اتصل بنا</a>
+        </nav>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        
+        <!-- Dark / Light Mode Toggle Button -->
+        <button class="theme-toggle-btn p-2 rounded-xl text-secondary hover:text-primary hover:bg-surface-container transition-all" title="تبديل المظهر (Dark / Light Mode)">
+          <span class="material-symbols-outlined theme-toggle-icon text-2xl">dark_mode</span>
+        </button>
+
+        <!-- Favorites Trigger -->
+        <button class="open-favorites-modal relative p-2 text-secondary hover:text-primary transition-colors" title="الوحدات المحفوظة">
+          <span class="material-symbols-outlined text-2xl">favorite</span>
+          <span class="favorites-badge-count hidden absolute -top-1 -right-1 bg-primary-container text-on-primary-container text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </button>
+
+        <!-- WhatsApp Quick Chat -->
+        <button onclick="openWhatsAppLead('مرحباً بيتر سوليوشنز، أود الاستفسار عن الوحدات المتاحة للبيع والشراء')" class="hidden sm:flex items-center gap-1.5 btn-primary px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap shadow-sm hover-gold-glow" title="محادثة واتساب">
+          <span class="material-symbols-outlined text-base">chat</span>
+          <span>واتساب</span>
+        </button>
+
+        <!-- Hotline -->
+        <a href="tel:19xxx" class="hidden md:flex items-center gap-1.5 text-on-surface font-bold text-xs bg-surface-container px-3.5 py-2 rounded-xl hover:bg-surface-container-high transition-colors whitespace-nowrap border border-border-gray/60">
+          <span class="material-symbols-outlined text-primary text-base">call</span>
+          <span>19xxx</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-menu-toggle lg:hidden p-2 text-on-surface hover:text-primary">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow pb-24">
+
+    <!-- ========================================== -->
+    <!-- VIEW 1: DEVELOPERS CATALOG (ALL DEVELOPERS) -->
+    <!-- ========================================== -->
+    <div id="developers-catalog-view">
+      
+      <!-- Hero Header -->
+      <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-12 pb-8 text-center">
+        <div class="inline-flex items-center gap-2 bg-badge-gold-bg text-badge-gold-text px-4 py-1.5 rounded-full text-xs font-bold mb-4 shadow-sm">
+          <span class="material-symbols-outlined text-[15px]">corporate_fare</span>
+          <span>شركاء النجاح والمطورين المعتمدين</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-on-surface mb-4 leading-tight">
+          دليل كبرى شركات التطوير العقاري
+        </h1>
+        <p class="text-sm sm:text-base text-secondary max-w-2xl mx-auto leading-relaxed">
+          تصفح قائمة المطورين المعتمدين في مصر ومدينة العبور، واستكشف المشروعات والكمبوندات السكنية مع عروض وخطط سداد مباشرة من المطور وبدون عمولات إضافية.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="max-w-xl mx-auto mt-8">
+          <div class="relative">
+            <input id="dev-search-input" type="text" placeholder="ابحث باسم المطور أو المشروع (مثل: طلعت مصطفى، البطل، صبور...)" class="input-field w-full rounded-2xl py-4 pr-12 pl-4 text-sm shadow-md border border-border-gray/80 outline-none transition-all"/>
+            <span class="material-symbols-outlined absolute right-4 top-4 text-secondary text-2xl">search</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Developers Grid -->
+      <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
+        <div id="developers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Injected dynamically by js/developers.js -->
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: DEVELOPER DETAIL & PROJECTS VIEW   -->
+    <!-- ========================================== -->
+    <div id="developer-detail-view" class="hidden">
+      
+      <!-- Top Action Bar & Breadcrumbs -->
+      <section class="bg-surface-bright border-b border-border-gray py-4">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-wrap items-center justify-between gap-4 text-xs">
+          
+          <!-- Breadcrumb navigation -->
+          <nav class="flex items-center gap-2 text-secondary font-semibold">
+            <a href="index.html" class="hover:text-primary transition-colors">الرئيسية</a>
+            <span class="material-symbols-outlined text-sm">chevron_left</span>
+            <button onclick="DevelopersApp.showCatalog(true)" class="hover:text-primary transition-colors">المطورين العقاريين</button>
+            <span class="material-symbols-outlined text-sm">chevron_left</span>
+            <span id="detail-bc-dev-name" class="text-on-surface font-bold"></span>
+          </nav>
+
+          <!-- Back to catalog button -->
+          <button onclick="DevelopersApp.showCatalog(true)" class="btn-secondary px-4 py-2 rounded-xl text-xs font-bold inline-flex items-center gap-1.5 hover:bg-surface-container">
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+            <span>العودة لكافة المطورين</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Developer Profile Hero Card -->
+      <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
+        <div class="bg-pure-white rounded-3xl border border-border-gray shadow-md overflow-hidden">
+          
+          <!-- Cover Banner -->
+          <div class="relative h-56 md:h-72 w-full overflow-hidden bg-surface-container-high">
+            <img id="dev-detail-cover" class="w-full h-full object-cover" src="" alt="غلاف المطور">
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/95 via-inverse-surface/60 to-inverse-surface/20"></div>
+
+            <div class="absolute bottom-6 right-6 left-6 flex flex-col md:flex-row md:items-end justify-between gap-4 text-pure-white">
+              <div class="flex items-center gap-4">
+                <div id="dev-detail-logo" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-pure-white text-primary flex items-center justify-center font-black text-xl sm:text-2xl shadow-xl border-2 border-border-gray shrink-0">
+                </div>
+                <div>
+                  <div class="inline-flex items-center gap-1 bg-primary-container text-on-primary-container px-3 py-0.5 rounded-full text-xs font-bold mb-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">verified</span>
+                    <span id="dev-detail-badge"></span>
+                  </div>
+                  <h1 id="dev-detail-name" class="text-2xl sm:text-3xl md:text-4xl font-black drop-shadow"></h1>
+                </div>
+              </div>
+
+              <!-- Quick action button -->
+              <div class="flex gap-2">
+                <button id="dev-detail-wa-btn" class="btn-primary px-6 py-3 rounded-xl text-xs font-bold flex items-center gap-2 hover-gold-glow shadow-md">
+                  <span class="material-symbols-outlined text-lg">chat</span>
+                  <span>استفسار عن مشروعات المطور</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Developer Info & Bio -->
+          <div class="p-6 sm:p-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 bg-surface-container-low rounded-2xl border border-border-gray/70 mb-6 text-center">
+              <div>
+                <span class="block text-xs text-secondary mb-1">تاريخ التأسيس</span>
+                <strong id="dev-detail-founded" class="text-on-surface font-black text-lg"></strong>
+              </div>
+              <div>
+                <span class="block text-xs text-secondary mb-1">سنوات الخبرة</span>
+                <strong id="dev-detail-exp" class="text-primary font-black text-lg"></strong>
+              </div>
+              <div>
+                <span class="block text-xs text-secondary mb-1">إجمالي الوحدات المسلمة</span>
+                <strong id="dev-detail-units" class="text-on-surface font-black text-lg"></strong>
+              </div>
+              <div>
+                <span class="block text-xs text-secondary mb-1">تقييم المشروعات</span>
+                <strong class="text-badge-gold-text font-black text-lg flex items-center justify-center gap-1">
+                  <span class="material-symbols-outlined text-base">star</span>
+                  <span id="dev-detail-rating">4.9</span>
+                </strong>
+              </div>
+            </div>
+
+            <div>
+              <h2 class="text-base font-bold text-on-surface mb-2">نبذة عن المطور:</h2>
+              <p id="dev-detail-desc" class="text-sm text-secondary leading-relaxed"></p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6">
+        <div class="flex items-center justify-between border-b border-border-gray pb-4 mb-8">
+          <div>
+            <h2 id="dev-projects-count-title" class="text-2xl font-black text-on-surface"></h2>
+            <p class="text-xs text-secondary mt-1">اضغط على أي مشروع لمشاهدة الصور كاملة ومعرفة تفاصيل خطط السداد والأسعار.</p>
+          </div>
+        </div>
+
+        <div id="developer-projects-grid" class="space-y-10">
+          <!-- Projects injected dynamically by js/developers.js -->
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-inverse-surface text-surface-container py-16 border-t border-secondary/40">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-secondary/30">
+        
+        <!-- Col 1: About -->
+        <div class="md:col-span-1">
+          <div class="font-black text-2xl text-primary-fixed mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center text-lg">BS</span>
+            <span>Better Solutions</span>
+          </div>
+          <p class="text-xs text-surface-variant leading-relaxed mb-6">
+            بيتر سوليوشنز - وجهتك الأولى لشراء وبيع عقارات البرايمري والريسيل في مدينة العبور بأمان وسرعة.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="text-sm font-bold text-pure-white mb-4">روابط سريعة</h4>
+          <ul class="space-y-2.5 text-xs text-surface-variant">
+            <li><a href="latest-units.html" class="hover:text-primary-fixed transition-colors">أحدث الوحدات المعروضة</a></li>
+            <li><a href="resale-deals.html" class="hover:text-primary-fixed transition-colors">لقطات ريسيل مخفضة</a></li>
+            <li><a href="developers.html" class="text-primary-fixed font-bold">المطورين العقاريين</a></li>
+            <li><a href="sell-property.html" class="hover:text-primary-fixed transition-colors">اعرض شقتك للبيع</a></li>
+            <li><a href="about.html" class="hover:text-primary-fixed transition-colors">عن بيتر سوليوشنز</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Areas -->
+        <div>
+          <h4 class="text-sm font-bold text-pure-white mb-4">المناطق والكمبوندات</h4>
+          <ul class="space-y-2.5 text-xs text-surface-variant">
+            <li><a href="latest-units.html?city=الحي+الخامس" class="hover:text-primary-fixed transition-colors">عقارات الحي الخامس</a></li>
+            <li><a href="latest-units.html?city=الحي+التاسع" class="hover:text-primary-fixed transition-colors">عقارات الحي التاسع</a></li>
+            <li><a href="latest-units.html?city=جولف+سيتي" class="hover:text-primary-fixed transition-colors">عقارات جولف سيتي</a></li>
+            <li><a href="latest-units.html?city=مدينة+العبور" class="hover:text-primary-fixed transition-colors">عقارات مدينة العبور</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="text-sm font-bold text-pure-white mb-4">عنوان الفرع والتواصل</h4>
+          <div class="space-y-3 text-xs text-surface-variant">
+            <p class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-primary-fixed text-base shrink-0 mt-0.5">location_on</span>
+              <span><strong>مدينة العبور - الحي الخامس</strong><br/>شارع يحيى المشد</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary-fixed text-base">call</span>
+              <span>الخط الساخن: <strong>19xxx</strong></span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary-fixed text-base">chat</span>
+              <span>واتساب خدمة العملاء: 01099887766</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-secondary">
+        <div>جميع الحقوق محفوظة لشركة بيتر سوليوشنز للتسويق العقاري © 2013 - 2026</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-primary-fixed transition-colors">الشروط والأحكام</a>
+          <a href="#" class="hover:text-primary-fixed transition-colors">سياسة الخصوصية</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Image Lightbox Modal -->
+  <div id="project-lightbox-modal" class="fixed inset-0 z-50 hidden flex flex-col justify-between p-4 sm:p-6 bg-inverse-surface/95 backdrop-blur-md">
+    
+    <!-- Lightbox Header -->
+    <div class="flex items-center justify-between text-pure-white mb-4">
+      <div>
+        <h3 id="lightbox-project-title" class="font-bold text-base sm:text-lg"></h3>
+        <span id="lightbox-counter" class="text-xs text-surface-container font-medium"></span>
+      </div>
+      <button onclick="DevelopersApp.closeLightbox()" class="p-2 text-pure-white hover:text-primary-container rounded-full bg-pure-white/10 transition-colors">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+
+    <!-- Lightbox Main Image & Arrows -->
+    <div class="relative flex-1 flex items-center justify-center max-h-[75vh]">
+      <button onclick="DevelopersApp.lightboxPrev()" class="absolute right-2 sm:right-4 z-10 w-12 h-12 rounded-full bg-pure-white/20 hover:bg-pure-white text-pure-white hover:text-on-surface flex items-center justify-center transition-all shadow-lg">
+        <span class="material-symbols-outlined text-2xl">arrow_forward</span>
+      </button>
+
+      <img id="lightbox-main-img" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl transition-all duration-300" src="" alt="صورة المشروع">
+
+      <button onclick="DevelopersApp.lightboxNext()" class="absolute left-2 sm:left-4 z-10 w-12 h-12 rounded-full bg-pure-white/20 hover:bg-pure-white text-pure-white hover:text-on-surface flex items-center justify-center transition-all shadow-lg">
+        <span class="material-symbols-outlined text-2xl">arrow_back</span>
+      </button>
+    </div>
+
+    <!-- Lightbox Bottom Thumbnails -->
+    <div id="lightbox-thumbs-container" class="flex gap-2 overflow-x-auto justify-center py-4 no-scrollbar">
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="drawer-backdrop" class="fixed inset-0 modal-backdrop z-50 hidden transition-opacity"></div>
+  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-pure-white z-50 transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+    <div class="p-6 border-b border-border-gray flex justify-between items-center">
+      <div class="font-extrabold text-xl text-on-surface flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-black text-base">BS</span>
+        <span>Better Solutions</span>
+      </div>
+      <button id="drawer-close" class="p-1.5 text-secondary hover:text-on-surface">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+    <div class="p-6 flex-1 overflow-y-auto space-y-4">
+      <div class="flex items-center justify-between py-2 border-b border-border-gray">
+        <span class="text-xs font-bold text-on-surface">المظهر (Dark / Light)</span>
+        <button class="theme-toggle-btn p-2 rounded-lg text-secondary hover:text-primary bg-surface-container">
+          <span class="material-symbols-outlined theme-toggle-icon text-xl">dark_mode</span>
+        </button>
+      </div>
+
+      <a href="index.html" class="block font-semibold text-on-surface py-2 border-b border-border-gray">الرئيسية</a>
+      <a href="latest-units.html" class="block font-semibold text-on-surface py-2 border-b border-border-gray">أحدث الوحدات</a>
+      <a href="resale-deals.html" class="block font-semibold text-on-surface py-2 border-b border-border-gray">لقطات ريسيل</a>
+      <a href="developers.html" class="block font-bold text-primary py-2 border-b border-border-gray">المطورين العقاريين</a>
+      <a href="sell-property.html" class="block font-semibold text-on-surface py-2 border-b border-border-gray">اعرض شقتك للبيع</a>
+      <a href="about.html" class="block font-semibold text-on-surface py-2 border-b border-border-gray">عن الشركة</a>
+      <a href="contact.html" class="block font-semibold text-on-surface py-2 border-b border-border-gray">اتصل بنا</a>
+      
+      <div class="pt-6 space-y-3">
+        <button onclick="openWhatsAppLead('استفسار عام عن مشروعات المطورين')" class="w-full btn-primary py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">chat</span>
+          <span>واتساب مباشر</span>
+        </button>
+        <a href="tel:19xxx" class="w-full btn-secondary py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">call</span>
+          <span>اتصل بنا 19xxx</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Favorites Modal -->
+  <div id="favorites-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div id="favorites-modal-backdrop" class="fixed inset-0 modal-backdrop"></div>
+    <div class="relative z-10 bg-pure-white rounded-2xl max-w-xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-border-gray overflow-hidden">
+      <div class="p-5 border-b border-border-gray flex justify-between items-center bg-surface-bright">
+        <div class="flex items-center gap-2 font-bold text-on-surface text-base">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <span>الوحدات المحفوظة في المفضلة</span>
+        </div>
+        <button id="favorites-modal-close" class="p-1 text-secondary hover:text-on-surface">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <div id="favorites-modal-list" class="p-5 overflow-y-auto space-y-3 flex-1"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/developers-data.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/developers.js"></script>
+</body>
+</html>
